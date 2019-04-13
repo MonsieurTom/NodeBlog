@@ -1,0 +1,20 @@
+<%include ../Templates/Head.ejs %>
+    <%include ../Templates/navbar.ejs %>
+
+<% if(write_right == true) {%>
+<div class="container" style="margin-top: 20px;position: relative">
+    <div class="row w-100">
+        <h2><i class="far fa-newspaper main-color"></i><b class="main-color" style="margin-left: 10px;"><%= post.title%></b></h2>
+        <div style="height: 1px" class="bg-light w-100"></div>
+    </div>
+
+    <div class="row w-100 bg-light margin-20">
+        <div id="editor" class="centered"><%- post.body%></div>
+    </div>
+    <button type="button" onclick="editButtonClick(this.value)" value="<%= post._id%>" class="btn btn-light float-right margin-20" style="margin-bottom: 80px"><b>Save & Post</b></button>
+</div>
+<% } %>
+    <%include ../Templates/footer.ejs %>
+<%include ../Templates/js_includes.ejs %>
+</body>
+</html>

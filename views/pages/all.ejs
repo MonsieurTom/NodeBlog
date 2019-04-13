@@ -1,0 +1,39 @@
+<%include ../Templates/Head.ejs %>
+<%include ../Templates/navbar.ejs %>
+
+<div class="container">
+    <div class="row w-100">
+        <h2><b class="main-color" style="margin-left: 10px;">All posts page: <%= pageNumber%></b></h2>
+        <div style="height: 1px" class="bg-light w-100"></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <% for(let i = pageNumber * 10; i < pageNumber + 10 && i < posts.length ; i++) { %>
+                <%include ../Templates/preview.ejs %>
+            <% } %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+        </div>
+        <div class="col-4 bg-light rounded margin-20">
+            <% for (let j = 0; j < posts.length; j++)
+            {
+                if (j % 10 == 0)
+                {
+                %>
+                    <a href="/all/<%= j / 10%>"><%= j / 10%></a>
+                <%
+                }
+            }
+            %>
+        </div>
+        <div class="col-4">
+        </div>
+    </div>
+</div>
+
+<%include ../Templates/footer.ejs %>
+<%include ../Templates/js_includes.ejs %>
+</body>
+</html>

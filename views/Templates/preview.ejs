@@ -1,0 +1,23 @@
+<div class="container article-preview">
+    <div class="card w-100">
+        <div class="card-body">
+            <h2 class="card-title"><b><a href="http://localhost:3000/view_post/<%=posts[i]._id%>" style="text-decoration: none;"><%= posts[i].title %></a></b></h2>
+            <p class="card-text" style="white-space: pre-line;">
+                <%
+                tmp = "";
+                for (let j = 0; j < posts[i].body.length && j < 75; j++)
+                    tmp += posts[i].body[j];
+                if (tmp.length == 75) {
+                %>
+                    <%- tmp + "..." %>
+                <% } else { %>
+                    <%- tmp %>
+                <% } %>
+            </p>
+        </div>
+        <div class="card-footer">
+            <small class="text-muted">Posted: <%= posts[i].date.toString() %> by <%= posts[i].author%></small>
+            <button type="button" id="previewButton" onclick="previewButtonClick(this.value)" value="<%= posts[i]._id%>" class="btn btn-outline-dark float-right">Read More</button>
+        </div>
+    </div>
+</div>

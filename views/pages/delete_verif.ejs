@@ -1,0 +1,24 @@
+<%include ../Templates/Head.ejs %>
+    <%include ../Templates/navbar.ejs %>
+
+    <% if(write_right == true) { %>
+    <div class="container">
+        <div class="row">
+            <div class="rounded bg-dark centered margin-20" style="padding: 5px">
+                <h1 class="text-white centered text-center"><b>Do you really want to delete this article?</b></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="centered bg-dark rounded" style="padding: 5px">
+                <button type="button" id="DeleteButtonYes" onclick="deleteButtonYesClick(this.value)" value="<%= post._id%>" class="btn btn-outline-light "><b>YES</b></button>
+            </div>
+            <div class="centered bg-dark rounded" style="padding: 5px">
+                <button type="button" id="DeleteButtonNo" onclick="deleteButtonNoClick()" class="btn btn-outline-light centered"><b>NO</b></button>
+            </div>
+        </div>
+    </div>
+    <% } %>
+    <%include ../Templates/footer.ejs %>
+<%include ../Templates/js_includes.ejs %>
+</body>
+</html>

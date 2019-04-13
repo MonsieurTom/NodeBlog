@@ -1,0 +1,29 @@
+<%include ../Templates/Head.ejs %>
+    <%include ../Templates/navbar.ejs %>
+
+    <div class="container" style="position: relative">
+        <div class="row margin-20 text-white text-center">
+            <h2><b style="margin-left: 20px "><%= post.title%></b></h2>
+            <div style="height: 1px; margin-left: 10px; margin-right: 10px" class="bg-light w-100"></div>
+        </div>
+        <div class="row margin-20 bg-light rounded">
+            <div class="ql-container ql-snow w-100 rounded" style="padding: 10px">
+                <div class="ql-editor">
+                    <%- post.body%>
+                </div>
+            </div>
+        </div>
+        <% if(write_right == true) { %>
+        <div class="row margin-20">
+            <div class="bg-light rounded">
+                <b><a href="/delete_verif/<%= post._id %>" style="text-decoration: none; color: #696969;"><i class="far fa-trash-alt" style="color: #696969; margin: 10px;"></i>Delete</a></b>
+                <b><a href="/edit_post/<%= post._id %>" style="text-decoration: none; color: #696969; margin-right: 5px"><i class="far fa-edit" style="color: #696969; margin: 10px;"></i>Edit</a></b>
+            </div>
+        </div>
+        <% } %>
+    </div>
+
+    <%include ../Templates/footer.ejs %>
+<%include ../Templates/js_includes.ejs %>
+</body>
+</html>

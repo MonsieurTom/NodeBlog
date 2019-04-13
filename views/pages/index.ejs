@@ -1,0 +1,46 @@
+<%include ../Templates/Head.ejs %>
+    <%include ../Templates/navbar.ejs %>
+
+    <div class="container margin-20">
+        <div class="row">
+            <div id="carouselExampleControls" class="carousel slide w-100" data-ride="carousel" style="margin-bottom: 5px; margin-left: auto; margin-right: auto;">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <a href="/view_post/5ca8e22220ba450674ca4e37"><img class="d-block w-100 my-carouselle" src="/img/shadowBringer.JPG" alt="First slide"></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="/view_post/5ca8dd754d08cc3ac4093a46"><img class="d-block w-100 my-carouselle" src="/img/sekiro.jpg" alt="Second slide"></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="/view_post/5ca8e50e20ba450674ca4e38"><img class="d-block w-100 my-carouselle" src="/img/fire_emblem_three.jpg" alt="Third slide"></a>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row text-white">
+            <h1><u>Latest Blog posts:</u></h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <% let j = 0;
+                for(let i = posts.length - 1; j < 10 && i >= 0; i--) { %>
+                    <%include ../Templates/preview.ejs %>
+                <% j++; } %>
+            </div>
+        </div>
+    </div>
+
+<%include ../Templates/footer.ejs %>
+<%include ../Templates/js_includes.ejs %>
+</body>
+</html>
